@@ -1,0 +1,105 @@
+// Bayesian network 
+network "InternalNetwork" { //12 variables and 12 probability distributions
+}
+variable  "Alice" { //2 values
+	type discrete[2] {  "pd"  "pp" };
+	property "position = (145, 123)" ;
+}
+variable  "Bob" { //2 values
+	type discrete[2] {  "pd"  "pp" };
+	property "position = (270, 122)" ;
+}
+variable  "Cindy" { //2 values
+	type discrete[2] {  "pd"  "pp" };
+	property "position = (396, 122)" ;
+}
+variable  "Dave" { //2 values
+	type discrete[2] {  "pd"  "pp" };
+	property "position = (531, 122)" ;
+}
+variable  "Ellen" { //2 values
+	type discrete[2] {  "pd"  "pp" };
+	property "position = (669, 122)" ;
+}
+variable  "Fred" { //2 values
+	type discrete[2] {  "pd"  "pp" };
+	property "position = (206, 235)" ;
+}
+variable  "Gwen" { //2 values
+	type discrete[2] {  "pd"  "pp" };
+	property "position = (328, 237)" ;
+}
+variable  "Henry" { //2 values
+	type discrete[2] {  "pd"  "pp" };
+	property "position = (462, 232)" ;
+}
+variable  "Iona" { //2 values
+	type discrete[2] {  "pd"  "pp" };
+	property "position = (602, 230)" ;
+}
+variable  "John" { //2 values
+	type discrete[2] {  "pd"  "pp" };
+	property "position = (275, 328)" ;
+}
+variable  "Katherine" { //2 values
+	type discrete[2] {  "pd"  "pp" };
+	property "position = (531, 321)" ;
+}
+variable  "Louis" { //3 values
+	type discrete[3] {  "dd"  "pd"  "pp" };
+	property "observed dd" ;
+	property "position = (409, 395)" ;
+}
+probability (  "Alice" ) { //1 variable(s) and 2 values
+	table 
+		0.01	// p(pd | evidence )
+		0.99; 	// p(pp | evidence );
+}
+probability (  "Bob" ) { //1 variable(s) and 2 values
+	table 
+		0.01	// p(pd | evidence )
+		0.99; 	// p(pp | evidence );
+}
+probability (  "Cindy" ) { //1 variable(s) and 2 values
+	table 
+		0.01	// p(pd | evidence )
+		0.99; 	// p(pp | evidence );
+}
+probability (  "Dave" ) { //1 variable(s) and 2 values
+	table 
+		0.01	// p(pd | evidence )
+		0.99; 	// p(pp | evidence );
+}
+probability (  "Ellen" ) { //1 variable(s) and 2 values
+	table 
+		0.01	// p(pd | evidence )
+		0.99; 	// p(pp | evidence );
+}
+probability (  "Fred"  "Alice"  "Bob" ) { //3 variable(s) and 8 values
+	table 
+		 0.67 0.5 0.5 0.0 0.33 0.5 0.5 1.0;
+}
+probability (  "Gwen"  "Bob"  "Cindy" ) { //3 variable(s) and 8 values
+	table 
+		 0.67 0.5 0.5 0.0 0.33 0.5 0.5 1.0;
+}
+probability (  "Henry"  "Cindy"  "Dave" ) { //3 variable(s) and 8 values
+	table 
+		 0.67 0.5 0.5 0.0 0.33 0.5 0.5 1.0;
+}
+probability (  "Iona"  "Ellen"  "Bob" ) { //3 variable(s) and 8 values
+	table 
+		 0.67 0.5 0.5 0.0 0.33 0.5 0.5 1.0;
+}
+probability (  "John"  "Fred"  "Gwen" ) { //3 variable(s) and 8 values
+	table 
+		 0.67 0.5 0.5 0.0 0.33 0.5 0.5 1.0;
+}
+probability (  "Katherine"  "Henry"  "Iona" ) { //3 variable(s) and 8 values
+	table 
+		 0.67 0.5 0.5 0.0 0.33 0.5 0.5 1.0;
+}
+probability (  "Louis"  "John"  "Katherine" ) { //3 variable(s) and 12 values
+	table 
+		 0.25 0.0 0.0 0.0 0.5 0.5 0.5 0.0 0.25 0.5 0.5 1.0;
+}
